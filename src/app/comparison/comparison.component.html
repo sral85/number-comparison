@@ -1,0 +1,24 @@
+<div class="grid grid-cols-3 grid-rows-3 justify-items-stretch gap-4 bg-yellow-100">
+  <div class="row-span-3 m-auto rounded-xl bg-yellow-300">
+    <p class="text-9xl">{{numberLeft}}</p>
+  </div>
+  <div [ngClass]="{'bg-yellow-300': displayCorrectness(1)==2, 'bg-green-500': displayCorrectness(1)==1, 'bg-red-500': displayCorrectness(1)==0}"
+    class="col-start-2 row-start-1 m-auto rounded-xl">
+    <button class="text-7xl" (click)="setSelection(1)">&gt;</button>
+  </div>
+  <div [ngClass]="{'bg-yellow-300': displayCorrectness(2)==2, 'bg-green-500': displayCorrectness(2)==1, 'bg-red-500': displayCorrectness(2)==0}"
+   class="col-start-2 row-start-2 m-auto rounded-xl">
+    <button class="text-7xl" (click)="setSelection(2)">=</button>
+  </div>
+  <div [ngClass]="{'bg-yellow-300': displayCorrectness(3)==2, 'bg-green-500': displayCorrectness(3)==1, 'bg-red-500': displayCorrectness(3)==0}"
+   class="col-start-2 row-start-3 m-auto rounded-xl">
+    <button class="text-7xl" (click)="setSelection(3)">&lt;</button>
+  </div>
+  <div class="col-start-3 row-span-3 row-start-1 m-auto rounded-xl bg-yellow-300">
+    <button class="text-9xl">{{numberRight}}</button>
+  </div>
+</div>
+
+<div class="flex flex-col items-center bg-yellow-500 m-auto rounded-xl">
+  <button class="text-5xl" (click)="newComparison()">Neuer Vergleich</button>
+</div> 
